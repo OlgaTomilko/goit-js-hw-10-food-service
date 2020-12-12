@@ -1,4 +1,6 @@
 import './styles.css';
+import itemsTemplate from './templates/menu-items.hbs';
+import menuItems from './menu.json';
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -8,7 +10,12 @@ const Theme = {
 const refs = {
   body: document.querySelector('body'),
   toggle: document.querySelector('#theme-switch-toggle'),
+  menu: document.querySelector('.js-menu'),
 };
+
+const markup = itemsTemplate(menuItems);
+
+refs.menu.insertAdjacentHTML('beforeend', markup);
 
 refs.toggle.addEventListener('change', onToggle);
 
