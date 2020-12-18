@@ -39,5 +39,6 @@ function onlocalStorage() {
 
 function onToggle() {
   refs.body.classList.toggle(Theme.DARK);
+  refs.body.classList.toggle(Theme.LIGHT);
   onlocalStorage();
 }
